@@ -25,28 +25,40 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 50vh;
+            height: 55vh;
             /* 从上到下的模糊渐变 */
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             mask-image: linear-gradient(to bottom, 
                 rgba(0, 0, 0, 1) 0%,
-                rgba(0, 0, 0, 0.8) 30%,
-                rgba(0, 0, 0, 0.5) 60%,
-                rgba(0, 0, 0, 0.2) 80%,
+                rgba(0, 0, 0, 1) 50%,
+                rgba(0, 0, 0, 0.6) 70%,
+                rgba(0, 0, 0, 0.2) 85%,
                 rgba(0, 0, 0, 0) 100%
             );
             -webkit-mask-image: linear-gradient(to bottom, 
                 rgba(0, 0, 0, 1) 0%,
-                rgba(0, 0, 0, 0.8) 30%,
-                rgba(0, 0, 0, 0.5) 60%,
-                rgba(0, 0, 0, 0.2) 80%,
+                rgba(0, 0, 0, 1) 50%,
+                rgba(0, 0, 0, 0.6) 70%,
+                rgba(0, 0, 0, 0.2) 85%,
                 rgba(0, 0, 0, 0) 100%
             );
+        }
+
+        /* 文字容器：独立于模糊层 */
+        .text-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 55vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            /* 确保文字不被模糊 */
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
         }
 
         /* 文字样式 */
@@ -65,7 +77,8 @@
     </style>
 </head>
 <body>
-    <div class="blur-overlay">
+    <div class="blur-overlay"></div>
+    <div class="text-container">
         <div class="text-content">
             <p>This is ZoLive's Github Pages website.</p>
             <p>THe website is currently under construction.</p>
